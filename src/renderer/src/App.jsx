@@ -1,9 +1,16 @@
+import { useState } from 'react'
+import { Clock, OptionOverlay, Topbar } from './components'
+import { appContext } from './Context'
 function App() {
   // const ipcHandle = () => window.electron.ipcRenderer.send('ping')
-
+  const [themeColor, setThemeColor] = useState('bg-violet-500')
+  const [isOverlay, setIsOverlay] = useState(true)
   return (
     <>
-      <h1 className="bg-red-50">hello</h1>
+      <appContext.Provider value={{ themeColor, setThemeColor, isOverlay, setIsOverlay }}>
+        <Topbar />
+        {isOverlay ? <OptionOverlay /> : <Clock />}
+      </appContext.Provider>
     </>
   )
 }

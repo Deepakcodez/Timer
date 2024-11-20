@@ -1,3 +1,10 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@font-face {
+  font-family: "clockFont";
+  src: local("clockFont"),
+    url("./fonts/digital-7 (italic).ttf") format("opentype");
+  font-weight: normal;
+}
